@@ -10,9 +10,9 @@ const nextConfig = {
   // Configure MDX
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 
-  // Optional: If deploying to GitHub Pages with custom repo (uncomment and adjust)
-  // basePath: '/repo-name',
-  // assetPrefix: '/repo-name/',
+  // GitHub Pages deployment configuration
+  basePath: '/margarethamilton',
+  assetPrefix: '/margarethamilton/',
 }
 
 module.exports = nextConfig
