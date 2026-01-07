@@ -1,5 +1,6 @@
 import { Container } from '@/components/ui/container'
 import { NewsletterForm } from '@/components/forms/newsletter-form'
+import { getAssetPath } from '@/lib/assets'
 import Link from 'next/link'
 
 const socialLinks = [
@@ -28,7 +29,7 @@ export function Footer() {
             <div className="lg:col-span-1">
               <Link href="/" className="inline-block">
                 <img
-                  src="/images/logo/logo-blanco.svg"
+                  src={getAssetPath('/images/logo/logo-blanco.svg')}
                   alt="Proyecto Margaret Hamilton"
                   className="h-10 w-auto"
                 />

@@ -2,6 +2,7 @@
 
 import { Container } from '@/components/ui/container'
 import { cn } from '@/lib/utils'
+import { getAssetPath } from '@/lib/assets'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -33,7 +34,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <img
-              src="/images/logo/logoMH.svg"
+              src={getAssetPath('/images/logo/logoMH.svg')}
               alt="Logo Proyecto Margaret Hamilton"
               className="h-10 w-auto"
             />

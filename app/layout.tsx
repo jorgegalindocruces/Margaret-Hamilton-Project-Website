@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Nunito, Manrope, Caveat } from 'next/font/google'
 import './globals.css'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const nunito = Nunito({
   subsets: ['latin'],
   variable: '--font-nunito',
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Proyecto Margaret Hamilton Cádiz' }],
   creator: 'Proyecto Margaret Hamilton',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/images/logo/logoMH.svg',
+    icon: `${basePath}/favicon.svg`,
+    shortcut: `${basePath}/favicon.svg`,
+    apple: `${basePath}/images/logo/logoMH.svg`,
   },
   openGraph: {
     type: 'website',
@@ -63,7 +65,7 @@ export const metadata: Metadata = {
       'Escuela de programación gratuita en Cádiz. Cursos de Scratch y coding para niños de 6 a 12 años en colegios públicos. Talleres educativos sin ánimo de lucro.',
     images: [
       {
-        url: '/images/logo/logo.svg',
+        url: `${basePath}/images/logo/logo.svg`,
         width: 1200,
         height: 630,
         alt: 'Proyecto Margaret Hamilton',
@@ -76,7 +78,7 @@ export const metadata: Metadata = {
     description:
       'Escuela de programación gratuita en Cádiz. Aprende Scratch y coding en colegios públicos.',
     creator: '@proyectomargarethamilton',
-    images: ['/images/logo/logo.svg'],
+    images: [`${basePath}/images/logo/logo.svg`],
   },
   robots: {
     index: true,
