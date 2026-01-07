@@ -50,29 +50,36 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ### 3. Desarrollo Local
 
-**⚠️ Nota importante sobre modo desarrollo:**
-
-Debido a la configuración de `output: 'export'` en Next.js, el modo desarrollo (`npm run dev`) tiene limitaciones conocidas. **Se recomienda trabajar con el build de producción:**
+El proyecto está configurado para funcionar automáticamente tanto en local como en producción sin cambios manuales.
 
 ```bash
-# Generar el build estático
-npm run build
-
-# Servir el sitio localmente
-npx serve out -l 3000
+# Modo desarrollo con hot-reload
+npm run dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000)
 
-### Modo desarrollo (limitado)
+**✅ Configuración Automática:**
+- En **local**: Sin `basePath`, funciona en `http://localhost:3000`
+- En **producción** (GitHub Pages): Aplica automáticamente `/margarethamilton` como basePath
 
-Si necesitas el hot-reload para desarrollo de estilos:
-
+El archivo `.env.local` (no incluido en git) controla esta configuración:
 ```bash
-npm run dev
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+GITHUB_PAGES=false
 ```
 
-**Limitación:** Las páginas dinámicas pueden mostrar errores en dev mode, pero funcionan correctamente en el build de producción.
+### Build de Producción Local
+
+Para probar el build de producción localmente:
+
+```bash
+# Generar build estático
+npm run build
+
+# Servir el sitio (sin basePath, como en desarrollo)
+npx serve out -l 3000
+```
 
 ## Estructura del Proyecto
 
