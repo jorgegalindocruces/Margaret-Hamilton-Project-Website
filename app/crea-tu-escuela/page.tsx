@@ -45,9 +45,54 @@ export default function CreaTuEscuelaPage() {
             <h1 className="mb-6 text-4xl font-bold text-gray-900 font-heading sm:text-5xl">
               Te enseñamos todo lo necesario para Montar tu propia escuela
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="mb-8 text-lg text-gray-600">
               Currículum completo, videos explicativos y materiales descargables
             </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Content Description */}
+      <Section>
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 font-heading">
+              Tecnología, comunidad y futuro en tus manos
+            </h2>
+
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p>
+                El proyecto Margaret Hamilton no pertenece a una ciudad, ni a una persona. Es una idea que nace con vocación universal, con el espíritu colaborativo y open source que define lo mejor del mundo tecnológico.
+              </p>
+
+              <p>
+                Queremos que cualquier persona, colectivo o escuela que comparta nuestros valores pueda replicar este modelo donde lo necesite. Creemos que el cambio real empieza desde abajo, desde las aulas, desde cada niña que se atreve a pensar: <em className="font-semibold">"yo también puedo programar cohetes"</em>.
+              </p>
+
+              <p>
+                Por eso hemos liberado todo el contenido de nuestro currículum: para que tú también puedas lanzar una escuela Margaret Hamilton en tu barrio, en tu ciudad, en tu cole.
+              </p>
+
+              <div className="bg-primary-50 rounded-xl p-8 mt-8">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900">
+                  🧩 ¿Qué encontrarás aquí?
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="mr-3 text-primary-600">✓</span>
+                    <span>El currículum completo dividido por sesiones, con todos los contenidos listos para aplicar en el aula.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 text-primary-600">✓</span>
+                    <span>Vídeos explicativos donde te guiamos paso a paso para llevar cada clase.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 text-primary-600">✓</span>
+                    <span>Materiales descargables, enlaces, ejercicios y recursos extra.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>
