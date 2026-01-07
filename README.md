@@ -1,57 +1,78 @@
-# Margaret Hamilton Project - Static Next.js Site
+# Margaret Hamilton Project
 
-Sitio web 100% estático del Proyecto Margaret Hamilton construido con Next.js 14 y contenido basado en MDX.
+![Margaret Hamilton Project](https://jorgegalindocruces.github.io/margarethamilton/images/hero/hero-main.png)
 
-## Stack Tecnológico
+Sitio web 100% estático del Proyecto Margaret Hamilton, una iniciativa sin ánimo de lucro que acerca la programación a niñas y niños de escuelas públicas.
+
+🌐 **Sitio en vivo:** [https://jorgegalindocruces.github.io/margarethamilton](https://jorgegalindocruces.github.io/margarethamilton)
+
+## 🚀 Stack Tecnológico
 
 - **Next.js 14** (App Router) con TypeScript
 - **TailwindCSS** para estilos
-- **MDX** para gestión de contenido
-- **Framer Motion** para animaciones
-- **Formspree** para formularios
-- **GitHub Pages** para hosting
+- **MDX** para gestión de contenido (45 cursos, 6 posts, eventos, equipo)
+- **next-mdx-remote** para renderizado de MDX
+- **Formspree** para formularios de contacto
+- **GitHub Pages** para hosting estático
 
-## Características
+## ✨ Características
 
-✅ **100% Estático** - Sin base de datos ni backend
-✅ **Contenido en MDX** - Archivos markdown con frontmatter
-✅ **SEO Optimizado** - Sitemap, robots.txt y metadata dinámica
-✅ **Formularios Funcionales** - Integración con Formspree
-✅ **Deploy Automático** - GitHub Actions → GitHub Pages
-✅ **Performance** - Generación estática en build time
+✅ **100% Estático** - Sin base de datos, sin backend, sin costos de servidor
+✅ **Contenido en MDX** - Gestión de contenido mediante archivos markdown
+✅ **SEO Optimizado** - Sitemap automático, robots.txt y metadata dinámica
+✅ **Formularios Funcionales** - Integración con Formspree para contacto y newsletter
+✅ **Deploy Automático** - GitHub Actions construye y despliega en cada push
+✅ **Alta Performance** - Generación estática en build time (SSG)
+✅ **Accesible** - Optimizado para todos los dispositivos y navegadores
 
-## Requisitos Previos
+## 📋 Requisitos
 
 - Node.js 18+ y npm
-- Cuenta de GitHub (para GitHub Pages)
-- Cuenta de Formspree (gratuita) - opcional pero recomendada
+- Git
 
-## Setup Local
+## 🛠️ Instalación y Desarrollo
 
-### 1. Clonar e instalar dependencias
+### 1. Clonar el repositorio
 
 ```bash
-git clone <tu-repo-url>
-cd MargaretHamilton
+git clone https://github.com/jorgegalindocruces/margarethamilton.git
+cd margarethamilton
 npm install
 ```
 
-### 2. Configurar variable de entorno (opcional)
+### 2. Variables de entorno (opcional)
 
-Crea un archivo `.env.local`:
+Crea un archivo `.env.local` (solo necesario para personalizar la URL del sitemap):
 
 ```bash
-# Solo necesario para SEO (sitemap)
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-### 3. Ejecutar en desarrollo
+### 3. Desarrollo Local
+
+**⚠️ Nota importante sobre modo desarrollo:**
+
+Debido a la configuración de `output: 'export'` en Next.js, el modo desarrollo (`npm run dev`) tiene limitaciones conocidas. **Se recomienda trabajar con el build de producción:**
+
+```bash
+# Generar el build estático
+npm run build
+
+# Servir el sitio localmente
+npx serve out -l 3000
+```
+
+Abre [http://localhost:3000](http://localhost:3000)
+
+### Modo desarrollo (limitado)
+
+Si necesitas el hot-reload para desarrollo de estilos:
 
 ```bash
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000)
+**Limitación:** Las páginas dinámicas pueden mostrar errores en dev mode, pero funcionan correctamente en el build de producción.
 
 ## Estructura del Proyecto
 
@@ -173,60 +194,114 @@ Los formularios usan Formspree. Para configurarlos:
 
 Busca `https://formspree.io/f/FORM_ID` y reemplaza con tus IDs.
 
-## Deploy en GitHub Pages
+## 🚀 Deploy en GitHub Pages
 
-### 1. Configurar GitHub Pages
+El sitio se despliega automáticamente mediante GitHub Actions cada vez que haces push a la rama `main`.
 
-1. Ve a tu repositorio en GitHub
-2. Settings > Pages
-3. Source: GitHub Actions
+### Configuración Inicial (ya realizada)
 
-### 2. Push a GitHub
+1. **GitHub Pages está configurado en el repositorio**:
+   - Settings > Pages > Source: **GitHub Actions**
+
+2. **Workflow configurado** en `.github/workflows/deploy.yml`:
+   - Se ejecuta automáticamente en cada push a `main`
+   - Construye el sitio con `npm run build`
+   - Despliega la carpeta `/out` a GitHub Pages
+
+### Actualizar Contenido
+
+Para actualizar el sitio, simplemente haz push de tus cambios:
 
 ```bash
 git add .
-git commit -m "Update content"
+git commit -m "Actualizar contenido"
 git push origin main
 ```
 
-El workflow de GitHub Actions se ejecutará automáticamente y desplegará el sitio.
+El sitio se actualizará automáticamente en **2-3 minutos**. Puedes ver el progreso en la pestaña **Actions** del repositorio.
 
-### 3. Dominio personalizado (opcional)
+### URL del Sitio
 
-1. En Settings > Pages > Custom domain
-2. Añade tu dominio: `www.margarethamiltonproject.org`
-3. Configura los DNS según las instrucciones de GitHub
+- **Producción:** https://jorgegalindocruces.github.io/margarethamilton
 
-## Comandos útiles
+### Dominio Personalizado (opcional)
+
+Para usar un dominio personalizado:
+
+1. Ve a Settings > Pages > Custom domain
+2. Añade tu dominio (ej: `www.margarethamiltonproject.org`)
+3. Configura los registros DNS según las instrucciones de GitHub
+4. Actualiza `NEXT_PUBLIC_SITE_URL` en el workflow de GitHub Actions
+
+## 📦 Comandos Disponibles
 
 ```bash
-npm run dev          # Desarrollo local
-npm run build        # Build estático (genera /out)
-npm run lint         # Linter
+npm run dev          # Modo desarrollo (limitado - ver nota arriba)
+npm run build        # Generar build estático en /out
+npm run lint         # Ejecutar ESLint
+npx serve out        # Servir build de producción localmente
 ```
 
-## SEO
+## 🔍 SEO y Performance
 
-- Metadata dinámica por página
-- OpenGraph tags configurados
-- Sitemap.xml generado automáticamente
-- robots.txt configurado
-- Optimización de imágenes (unoptimized para static export)
+### SEO
+- ✅ Metadata dinámica por página
+- ✅ OpenGraph tags configurados
+- ✅ Sitemap.xml generado automáticamente en cada build
+- ✅ robots.txt configurado
+- ✅ URLs amigables y descriptivas
 
-## Performance
+### Performance
+- ✅ Generación estática (SSG) - 0ms tiempo de servidor
+- ✅ Sin dependencias de runtime ni JavaScript innecesario
+- ✅ Font optimization con next/font
+- ✅ Code splitting automático
+- ✅ Imágenes optimizadas para web
 
-- Generación estática (SSG)
-- Sin dependencias de runtime
-- Font optimization con next/font
-- Code splitting automático
-- Lazy loading de imágenes
+## 🧰 Tecnologías Clave
 
-## Licencia
+| Tecnología | Propósito | Documentación |
+|------------|-----------|---------------|
+| Next.js 14 | Framework React con SSG | [docs](https://nextjs.org) |
+| MDX | Contenido con Markdown + JSX | [docs](https://mdxjs.com) |
+| TailwindCSS | Estilos utility-first | [docs](https://tailwindcss.com) |
+| next-mdx-remote | Renderizado de MDX | [docs](https://github.com/hashicorp/next-mdx-remote) |
+| Formspree | Formularios sin backend | [docs](https://formspree.io) |
+
+## 📁 Estructura de Contenido
+
+El contenido se gestiona completamente mediante archivos MDX:
+
+```
+content/
+├── blog/          # 6 posts del blog
+├── courses/       # 45 cursos de programación
+├── events/        # Eventos y actividades
+├── team/          # 2 miembros del equipo
+├── testimonials/  # Testimonios (vacío - listo para usar)
+└── partners/      # Colaboradores (vacío - listo para usar)
+```
+
+## 🤝 Contribuir
+
+¿Quieres ayudar a mejorar el proyecto? ¡Genial!
+
+1. Haz fork del repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Licencia
 
 Proyecto sin ánimo de lucro del Proyecto Margaret Hamilton.
 
-## Contacto
+## 📧 Contacto
 
-- Web: https://www.margarethamiltonproject.org
-- Email: proyectomargarethamilton@gmail.com
-- Instagram: [@proyectomargarethamilton](https://instagram.com/proyectomargarethamilton)
+- **Web:** https://jorgegalindocruces.github.io/margarethamilton
+- **Email:** proyectomargarethamilton@gmail.com
+- **Instagram:** [@proyectomargarethamilton](https://instagram.com/proyectomargarethamilton)
+
+---
+
+**Hecho con ❤️ para acercar la programación a las escuelas públicas**
