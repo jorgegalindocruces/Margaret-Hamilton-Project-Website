@@ -66,7 +66,7 @@ export default function CreaTuEscuelaPage() {
               </p>
 
               <p>
-                Queremos que cualquier persona, colectivo o escuela que comparta nuestros valores pueda replicar este modelo donde lo necesite. Creemos que el cambio real empieza desde abajo, desde las aulas, desde cada niña que se atreve a pensar: <em className="font-semibold">"yo también puedo programar cohetes"</em>.
+                Queremos que cualquier persona, colectivo o escuela que comparta nuestros valores pueda replicar este modelo donde lo necesite. Creemos que el cambio real empieza desde abajo, desde las aulas, desde cada niña que se atreve a pensar: <em className="font-semibold">&ldquo;yo también puedo programar cohetes&rdquo;</em>.
               </p>
 
               <p>
