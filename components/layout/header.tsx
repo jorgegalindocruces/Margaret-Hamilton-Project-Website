@@ -39,41 +39,48 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-8">
-            {navigation.map((item) => (
-              <div key={item.name} className="relative group">
-                {item.submenu ? (
-                  <>
-                    <button className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+            {navigation.map((item, index) => {
+              const isLastItem = index === navigation.length - 1
+
+              return (
+                <div key={item.name} className="relative group">
+                  {item.submenu ? (
+                    <>
+                      <button className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                        {item.name}
+                      </button>
+                      <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                        {item.submenu.map((subitem) => (
+                          <Link
+                            key={subitem.href}
+                            href={subitem.href}
+                            className={cn(
+                              'block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors',
+                              pathname === subitem.href && 'bg-primary-50 text-primary-600'
+                            )}
+                          >
+                            {subitem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'text-sm font-medium transition-colors',
+                        isLastItem
+                          ? 'rounded-lg bg-primary-600 px-6 py-2.5 text-white hover:bg-primary-700'
+                          : 'text-gray-700 hover:text-primary-600',
+                        pathname === item.href && !isLastItem && 'text-primary-600'
+                      )}
+                    >
                       {item.name}
-                    </button>
-                    <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.href}
-                          href={subitem.href}
-                          className={cn(
-                            'block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors',
-                            pathname === subitem.href && 'bg-primary-50 text-primary-600'
-                          )}
-                        >
-                          {subitem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      'text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors',
-                      pathname === item.href && 'text-primary-600'
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
-            ))}
+                    </Link>
+                  )}
+                </div>
+              )
+            })}
           </div>
 
           {/* Mobile menu button */}
@@ -99,41 +106,48 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col gap-4">
-              {navigation.map((item) => (
-                <div key={item.name}>
-                  {item.submenu ? (
-                    <>
-                      <div className="text-sm font-medium text-gray-900">{item.name}</div>
-                      <div className="mt-2 ml-4 flex flex-col gap-2">
-                        {item.submenu.map((subitem) => (
-                          <Link
-                            key={subitem.href}
-                            href={subitem.href}
-                            className={cn(
-                              'text-sm text-gray-600 hover:text-primary-600',
-                              pathname === subitem.href && 'text-primary-600 font-medium'
-                            )}
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {subitem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        'text-sm font-medium text-gray-700 hover:text-primary-600',
-                        pathname === item.href && 'text-primary-600'
-                      )}
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
+              {navigation.map((item, index) => {
+                const isLastItem = index === navigation.length - 1
+
+                return (
+                  <div key={item.name}>
+                    {item.submenu ? (
+                      <>
+                        <div className="text-sm font-medium text-gray-900">{item.name}</div>
+                        <div className="mt-2 ml-4 flex flex-col gap-2">
+                          {item.submenu.map((subitem) => (
+                            <Link
+                              key={subitem.href}
+                              href={subitem.href}
+                              className={cn(
+                                'text-sm text-gray-600 hover:text-primary-600',
+                                pathname === subitem.href && 'text-primary-600 font-medium'
+                              )}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {subitem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          'text-sm font-medium transition-colors',
+                          isLastItem
+                            ? 'rounded-lg bg-primary-600 px-6 py-3 text-white hover:bg-primary-700 text-center'
+                            : 'text-gray-700 hover:text-primary-600',
+                          pathname === item.href && !isLastItem && 'text-primary-600'
+                        )}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </div>
+                )
+              })}
             </div>
           </div>
         )}
