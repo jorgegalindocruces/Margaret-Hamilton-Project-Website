@@ -27,7 +27,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Proyecto Margaret Hamilton | Clases de Programación Gratis para Niños en Cádiz',
+    default: 'Proyecto Margaret Hamilton | Escuela de Programación para Niños y Niñas en Cádiz',
     template: '%s | Proyecto Margaret Hamilton',
   },
   description:
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: 'Proyecto Margaret Hamilton',
-    title: 'Clases de Programación Gratis para Niños en Cádiz | Proyecto Margaret Hamilton',
+    title: 'Escuela de Programación para Niños y Niñas en Cádiz | Proyecto Margaret Hamilton',
     description:
       'Escuela de programación gratuita en Cádiz. Cursos de Scratch y coding para niños de 6 a 12 años en colegios públicos. Talleres educativos sin ánimo de lucro.',
     images: [
