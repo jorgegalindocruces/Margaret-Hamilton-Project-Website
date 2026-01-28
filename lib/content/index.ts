@@ -5,19 +5,6 @@ import type { BlogPost, Event, Course, TeamMember, Testimonial, Partner, School 
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
-// Get basePath for production builds
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-
-// Apply basePath to local image paths
-function withBasePath(imagePath: string | undefined): string | undefined {
-  if (!imagePath) return imagePath
-  // Only apply to local paths starting with /
-  if (imagePath.startsWith('/') && !imagePath.startsWith('//')) {
-    return `${basePath}${imagePath}`
-  }
-  return imagePath
-}
-
 // Generic function to read all files from a directory
 function getFilesFromDirectory(dir: string): string[] {
   const fullPath = path.join(contentDirectory, dir)
@@ -29,21 +16,13 @@ function getFilesFromDirectory(dir: string): string[] {
   return fs.readdirSync(fullPath).filter((file) => file.endsWith('.mdx'))
 }
 
-// Generic function to parse MDX file with image path processing
-function parseMDXFile<T>(filePath: string, imageFields: string[] = []): T {
+// Generic function to parse MDX file
+function parseMDXFile<T>(filePath: string, _imageFields: string[] = []): T {
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  // Apply basePath to specified image fields
-  const processedData = { ...data }
-  imageFields.forEach((field) => {
-    if (processedData[field]) {
-      processedData[field] = withBasePath(processedData[field])
-    }
-  })
-
   return {
-    ...processedData,
+    ...data,
     content,
   } as T
 }
