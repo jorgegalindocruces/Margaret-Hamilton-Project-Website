@@ -17,7 +17,7 @@ export function Hero({ title, subtitle, description, ctaPrimary, ctaSecondary, v
   const hasBackground = videoBackground || backgroundImage
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-blue-50 py-20 sm:py-28 lg:py-32">
+    <section className={`relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-blue-50 ${videoBackground ? 'min-h-screen flex items-center' : 'py-20 sm:py-28 lg:py-32'}`}>
       {/* Image Background */}
       {backgroundImage && !videoBackground && (
         <>
@@ -35,10 +35,10 @@ export function Hero({ title, subtitle, description, ctaPrimary, ctaSecondary, v
       {/* Video Background */}
       {videoBackground && (
         <>
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 overflow-hidden">
             <iframe
               src={`https://player.vimeo.com/video/${videoBackground}?background=1&autoplay=1&loop=1&muted=1&quality=1080p`}
-              className="absolute top-1/2 left-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 scale-150"
+              className="absolute top-1/2 left-1/2 w-[177.77vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2"
               style={{ border: 'none' }}
               allow="autoplay; fullscreen"
               title="Video de fondo"

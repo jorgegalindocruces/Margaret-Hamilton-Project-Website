@@ -41,16 +41,6 @@ export default function HomePage() {
         videoBackground="1011818557"
       />
 
-      {/* Stats Section */}
-      <Stats
-        stats={[
-          { label: 'Fondos recibidos', value: '+30K€', icon: '💰' },
-          { label: 'Niños y niñas', value: '+60', icon: '👧👦' },
-          { label: 'Colegios', value: '2', icon: '🏫' },
-          { label: 'Donaciones', value: '+60', icon: '❤️' },
-        ]}
-      />
-
       {/* Features - Tres Pilares */}
       <Features
         title="Nuestros pilares fundamentales"
@@ -74,6 +64,16 @@ export default function HomePage() {
               'Inspiramos con historias de pioneras como Margaret Hamilton, mostrando que la tecnología es para todos.',
             icon: '⭐',
           },
+        ]}
+      />
+
+      {/* Stats Section */}
+      <Stats
+        stats={[
+          { label: 'Fondos recibidos', value: '+30K€', icon: '💰' },
+          { label: 'Niños y niñas', value: '+60', icon: '👧👦' },
+          { label: 'Colegios', value: '2', icon: '🏫' },
+          { label: 'Donaciones', value: '+60', icon: '❤️' },
         ]}
       />
 
