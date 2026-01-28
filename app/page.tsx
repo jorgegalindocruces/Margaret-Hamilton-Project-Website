@@ -35,7 +35,7 @@ export default function HomePage() {
       <Hero
         title="Desarrollamos el talento del futuro, inspirando a las niñas y niños de hoy"
         subtitle="Proyecto Margaret Hamilton"
-        description="Cerramos la brecha de género en tecnología desde la infancia con escuelas de programación gratuitas en colegios públicos"
+        description="Cerramos la brecha de género en tecnología desde la infancia con escuelas de programación subvencionadas en colegios públicos"
         ctaPrimary={{ text: 'Descubre cómo', href: '/nuestra-mision' }}
         ctaSecondary={{ text: 'Monta tu escuela', href: '/crea-tu-escuela' }}
         videoBackground="1011818557"
