@@ -32,6 +32,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.excerpt || post.title,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      images: post.coverImage ? [{ url: post.coverImage, alt: post.title }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || post.title,
       images: post.coverImage ? [post.coverImage] : [],
     },
   }
