@@ -2,7 +2,10 @@ import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
 import type { Metadata } from 'next'
 import { Nunito, Manrope, Caveat } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+
+const GA_TRACKING_ID = 'G-41LSR9HJS9'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
@@ -103,6 +106,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${nunito.variable} ${manrope.variable} ${caveat.variable}`}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `}
+        </Script>
+      </head>
       <body className="font-sans">
         <Header />
         <main className="min-h-screen">{children}</main>
