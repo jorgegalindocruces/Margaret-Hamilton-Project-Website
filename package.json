@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next build",
+    "build": "NEXT_OUTPUT=export next build",
+    "export": "NEXT_OUTPUT=export next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
