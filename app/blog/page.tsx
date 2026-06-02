@@ -6,21 +6,37 @@ import { getAllBlogPosts, getAllBlogCategories } from '@/lib/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Blog - Noticias y Eventos de Programación Infantil en Cádiz',
-  description:
-    'Blog del Proyecto Margaret Hamilton: noticias, eventos, talleres de programación en Cádiz. Historias de niños aprendiendo Scratch, hackatones infantiles en colegios públicos. Inspiración y novedades sobre educación tecnológica.',
+  title: 'Blog - Noticias de la Escuela de Programación en Cádiz',
+  description: 'Noticias, eventos y talleres de programación para niños en Cádiz. Scratch, robótica, hackatones y actividades STEM en colegios públicos.',
   keywords: [
-    'blog programación niños',
+    'blog programación niños Cádiz',
     'eventos tecnológicos Cádiz',
     'hackatones infantiles',
-    'talleres Expo Innova',
+    'talleres Scratch Cádiz',
     'actividades STEM Cádiz',
     'noticias educación tecnológica',
+    'escuela de programación Cádiz',
   ],
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
   openGraph: {
-    title: 'Blog - Programación para Niños en Cádiz',
-    description: 'Noticias, eventos y talleres de programación infantil en colegios públicos de Cádiz.',
+    title: 'Blog - Escuela de Programación en Cádiz',
+    description: 'Noticias, eventos y talleres de programación para niños en colegios públicos de Cádiz.',
+    url: `${siteUrl}/blog`,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Blog - Proyecto Margaret Hamilton' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Escuela de Programación en Cádiz',
+    description: 'Noticias, eventos y talleres de programación para niños en colegios públicos de Cádiz.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Blog - Proyecto Margaret Hamilton' }],
   },
 }
 

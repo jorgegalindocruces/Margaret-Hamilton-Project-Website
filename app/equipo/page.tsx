@@ -7,17 +7,37 @@ import { getAssetPath } from '@/lib/assets'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Equipo de Voluntarios - Únete a Nuestro Proyecto Educativo',
-  description:
-    'Conoce al equipo de educadores voluntarios del Proyecto Margaret Hamilton en Cádiz. Profesionales apasionados enseñando programación y Scratch a niños en colegios públicos. Únete como voluntario y ayuda a cerrar la brecha digital.',
+  title: 'Equipo de Voluntarios - Escuela de Programación en Cádiz',
+  description: 'Conoce al equipo de educadores voluntarios que enseña programación y Scratch a niños en colegios públicos de Cádiz. Únete como voluntario.',
   keywords: [
     'voluntariado programación Cádiz',
     'educadores tecnología',
     'profesores voluntarios STEM',
     'equipo proyecto educativo',
+    'escuela de programación Cádiz',
     'ser voluntario programación niños',
   ],
+  alternates: {
+    canonical: `${siteUrl}/equipo`,
+  },
+  openGraph: {
+    title: 'Equipo de Voluntarios - Proyecto Margaret Hamilton',
+    description: 'Educadores voluntarios enseñando programación y Scratch a niños en colegios públicos de Cádiz.',
+    url: `${siteUrl}/equipo`,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Equipo - Proyecto Margaret Hamilton' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Equipo de Voluntarios - Proyecto Margaret Hamilton',
+    description: 'Educadores voluntarios enseñando programación y Scratch a niños en colegios públicos de Cádiz.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Proyecto Margaret Hamilton' }],
+  },
 }
 
 export default function EquipoPage() {

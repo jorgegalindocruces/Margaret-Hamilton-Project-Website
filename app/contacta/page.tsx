@@ -5,17 +5,37 @@ import { Section } from '@/components/ui/section'
 import { getAssetPath } from '@/lib/assets'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Contacto - Monta una Escuela de Programación en tu Colegio',
-  description:
-    'Contacta con el Proyecto Margaret Hamilton en Cádiz. Lanza una escuela de programación en tu colegio público, colabora como voluntario o apoya nuestro proyecto educativo. Respondemos todas tus dudas sobre clases de Scratch y coding para niños.',
+  title: 'Contacto - Escuela de Programación en Cádiz',
+  description: 'Contacta con el Proyecto Margaret Hamilton. Monta una escuela de programación en tu colegio público de Cádiz o colabora como voluntario.',
   keywords: [
-    'contacto programación niños',
+    'contacto programación niños Cádiz',
     'montar escuela programación',
     'voluntariado tecnología Cádiz',
+    'escuela de programación Cádiz',
     'colaborar proyecto educativo',
     'llevar programación colegio',
   ],
+  alternates: {
+    canonical: `${siteUrl}/contacta`,
+  },
+  openGraph: {
+    title: 'Contacto - Proyecto Margaret Hamilton',
+    description: 'Monta una escuela de programación en tu colegio público de Cádiz o colabora como voluntario.',
+    url: `${siteUrl}/contacta`,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Contacto - Proyecto Margaret Hamilton' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contacto - Proyecto Margaret Hamilton',
+    description: 'Monta una escuela de programación en tu colegio público de Cádiz o colabora como voluntario.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Proyecto Margaret Hamilton' }],
+  },
 }
 
 export default function ContactaPage() {

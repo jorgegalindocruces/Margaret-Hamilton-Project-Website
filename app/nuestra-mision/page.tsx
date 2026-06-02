@@ -8,21 +8,36 @@ import { getAssetPath } from '@/lib/assets'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Nuestra Misión - Igualdad de Género en Tecnología para Niños',
-  description:
-    'Proyecto sin ánimo de lucro en Cádiz que cierra la brecha de género en tecnología. Escuelas de programación en colegios públicos con paridad 50/50 niños-niñas. Educación tecnológica accesible e inclusiva para edades de 6 a 12 años.',
+  title: 'Nuestra Misión - Igualdad de Género en Tecnología',
+  description: 'Escuela de programación en Cádiz sin ánimo de lucro. Cerramos la brecha de género en tecnología con paridad 50/50 en colegios públicos.',
   keywords: [
     'igualdad de género tecnología',
     'educación inclusiva Cádiz',
-    'proyecto sin ánimo de lucro',
+    'escuela de programación Cádiz',
     'brecha de género STEM',
     'programación paridad niños niñas',
     'voluntariado educación Cádiz',
   ],
+  alternates: {
+    canonical: `${siteUrl}/nuestra-mision`,
+  },
   openGraph: {
     title: 'Nuestra Misión - Igualdad en Tecnología desde la Infancia',
-    description: 'Proyecto sin ánimo de lucro en Cádiz. Escuelas de programación con paridad 50/50 en colegios públicos.',
+    description: 'Escuela de programación en Cádiz sin ánimo de lucro con paridad 50/50 en colegios públicos.',
+    url: `${siteUrl}/nuestra-mision`,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Nuestra Misión - Proyecto Margaret Hamilton' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nuestra Misión - Igualdad en Tecnología desde la Infancia',
+    description: 'Escuela de programación en Cádiz sin ánimo de lucro con paridad 50/50 en colegios públicos.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Proyecto Margaret Hamilton' }],
   },
 }
 

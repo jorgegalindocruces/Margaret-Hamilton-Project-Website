@@ -19,12 +19,27 @@ export async function generateStaticParams() {
 export const dynamicParams = false
 
 export async function generateMetadata({ params }: BlogAuthorPageProps): Promise<Metadata> {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
   const authors = getAllBlogAuthors()
   const author = authors.find((a) => a.slug === params.slug)
+  const title = author ? `Artículos de ${author.name}` : 'Autor'
+  const description = author
+    ? `Todos los artículos escritos por ${author.name} en el blog del Proyecto Margaret Hamilton.`
+    : 'Autor del blog del Proyecto Margaret Hamilton.'
+  const url = `${siteUrl}/blog-author/${params.slug}`
 
   return {
-    title: author ? `Posts de ${author.name}` : 'Autor',
-    description: `Posts escritos por ${author?.name}`,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'website',
+      locale: 'es_ES',
+      siteName: 'Proyecto Margaret Hamilton',
+    },
   }
 }
 

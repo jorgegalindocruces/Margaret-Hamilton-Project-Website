@@ -11,6 +11,7 @@ export interface BlogPost {
   category: string
   categorySlug: string
   coverImage?: string
+  ogImage?: string
   tags?: string[]
   draft: boolean
   content: string

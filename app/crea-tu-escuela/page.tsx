@@ -6,23 +6,38 @@ import { getAllCourses, getAllCourseCategories } from '@/lib/content'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Cursos de Programación y Scratch para Niños - Material Educativo',
-  description:
-    '45 cursos de Scratch y programación para niños de 6 a 12 años. Videos explicativos, talleres paso a paso y material descargable. Aprende a montar tu propia escuela de programación en colegios públicos. Recursos educativos abiertos de Cádiz.',
+  title: 'Cursos de Scratch y Programación para Niños',
+  description: '45 cursos de Scratch y programación para niños de 6 a 12 años. Vídeos, talleres y material descargable para montar tu escuela de programación.',
   keywords: [
     'cursos scratch niños',
     'tutoriales programación infantil',
-    'material educativo programación',
+    'escuela de programación Cádiz',
     'talleres scratch',
     'aprender scratch paso a paso',
     'recursos educativos programación',
     'currículum programación niños',
     'videos scratch español',
   ],
+  alternates: {
+    canonical: `${siteUrl}/crea-tu-escuela`,
+  },
   openGraph: {
     title: '45 Cursos de Scratch y Programación para Niños',
-    description: 'Material educativo completo: videos, talleres y recursos descargables para enseñar programación a niños.',
+    description: 'Vídeos, talleres y recursos descargables para enseñar programación a niños en colegios públicos.',
+    url: `${siteUrl}/crea-tu-escuela`,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Cursos - Proyecto Margaret Hamilton' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '45 Cursos de Scratch y Programación para Niños',
+    description: 'Vídeos, talleres y recursos descargables para enseñar programación a niños en colegios públicos.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Proyecto Margaret Hamilton' }],
   },
 }
 

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllBlogPosts, getAllCourses } from '@/lib/content'
+import { getAllBlogPosts, getAllCourses, getAllBlogCategories, getAllBlogAuthors, getAllEvents } from '@/lib/content'
 
 const BASE_URL = 'https://www.margarethamiltonproject.org'
 
@@ -70,5 +70,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...blogPages, ...coursePages]
+  // Dynamic blog categories
+  const categories = getAllBlogCategories()
+  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
+    url: `${BASE_URL}/blog-category/${cat.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.5,
+  }))
+
+  // Dynamic blog authors
+  const authors = getAllBlogAuthors()
+  const authorPages: MetadataRoute.Sitemap = authors.map((author) => ({
+    url: `${BASE_URL}/blog-author/${author.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
+  // Dynamic events
+  const events = getAllEvents()
+  const eventPages: MetadataRoute.Sitemap = events.map((event) => ({
+    url: `${BASE_URL}/events/${event.slug}`,
+    lastModified: new Date(event.startsAt).toISOString(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...blogPages, ...coursePages, ...categoryPages, ...authorPages, ...eventPages]
 }

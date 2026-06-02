@@ -12,12 +12,28 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Inicio - Escuela de Programación para Niños y Niñas en Cádiz',
-  description: 'Clases de programación y Scratch para niños de 6 a 12 años en colegios públicos de Cádiz. Talleres educativos, cursos de coding y eventos tecnológicos sin ánimo de lucro. ¡Aprende a programar!',
+  title: 'Escuela de Programación para Niños y Niñas en Cádiz',
+  description: 'Escuela de programación en Cádiz para niños de 6 a 12 años en colegios públicos. Aprende Scratch, robótica y coding con talleres sin ánimo de lucro.',
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: 'Proyecto Margaret Hamilton - Programación para Niños en Cádiz',
-    description: 'Escuela de programación en Cádiz. Más de 60 niños aprenden Scratch y coding en colegios públicos.',
+    title: 'Proyecto Margaret Hamilton - Escuela de Programación en Cádiz',
+    description: 'Escuela de programación en Cádiz para niños de 6 a 12 años. Scratch, robótica y coding en colegios públicos.',
+    url: siteUrl,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Proyecto Margaret Hamilton - Escuela de Programación en Cádiz' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Proyecto Margaret Hamilton - Escuela de Programación en Cádiz',
+    description: 'Escuela de programación en Cádiz para niños de 6 a 12 años. Scratch, robótica y coding en colegios públicos.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Proyecto Margaret Hamilton' }],
   },
 }
 

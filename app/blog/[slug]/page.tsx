@@ -26,22 +26,40 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     return { title: 'Post no encontrado' }
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+  const postUrl = `${siteUrl}/blog/${post.slug}`
+  const ogImageSrc = post.ogImage || post.coverImage
+  const ogImageUrl = ogImageSrc
+    ? ogImageSrc.startsWith('http') ? ogImageSrc : `${siteUrl}${ogImageSrc}`
+    : undefined
+  const description = post.excerpt || post.title
+
   return {
     title: post.title,
-    description: post.excerpt || post.title,
+    description,
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
       title: post.title,
-      description: post.excerpt || post.title,
+      description,
+      url: postUrl,
       type: 'article',
+      locale: 'es_ES',
+      siteName: 'Proyecto Margaret Hamilton',
       publishedTime: post.date,
       authors: [post.author],
-      images: post.coverImage ? [{ url: post.coverImage, alt: post.title }] : [],
+      section: post.category,
+      tags: post.tags,
+      images: ogImageUrl
+        ? [{ url: ogImageUrl, width: 1200, height: 630, alt: post.title }]
+        : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt || post.title,
-      images: post.coverImage ? [post.coverImage] : [],
+      description,
+      images: ogImageUrl ? [{ url: ogImageUrl, alt: post.title }] : [],
     },
   }
 }

@@ -5,17 +5,37 @@ import { Section } from '@/components/ui/section'
 import { getAssetPath } from '@/lib/assets'
 import type { Metadata } from 'next'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+
 export const metadata: Metadata = {
-  title: 'Donaciones - Apoya la Educación Tecnológica en Cádiz',
-  description:
-    'Ayuda al Proyecto Margaret Hamilton: donaciones deducibles para llevar programación a más colegios públicos de Cádiz. Proyecto sin ánimo de lucro que fomenta la igualdad de género en tecnología. Invierte en el futuro de niños y niñas.',
+  title: 'Donaciones - Apoya la Escuela de Programación en Cádiz',
+  description: 'Apoya al Proyecto Margaret Hamilton con donaciones deducibles. Lleva programación a más colegios públicos de Cádiz. Invierte en el futuro.',
   keywords: [
     'donaciones programación niños',
     'donar proyecto educativo Cádiz',
     'colaborar sin ánimo lucro',
+    'escuela de programación Cádiz',
     'patrocinio educación tecnológica',
     'donaciones deducibles Cádiz',
   ],
+  alternates: {
+    canonical: `${siteUrl}/donacion`,
+  },
+  openGraph: {
+    title: 'Donaciones - Proyecto Margaret Hamilton',
+    description: 'Apoya con donaciones deducibles la escuela de programación para niños en colegios públicos de Cádiz.',
+    url: `${siteUrl}/donacion`,
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'Proyecto Margaret Hamilton',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: 'Donaciones - Proyecto Margaret Hamilton' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Donaciones - Proyecto Margaret Hamilton',
+    description: 'Apoya con donaciones deducibles la escuela de programación para niños en colegios públicos de Cádiz.',
+    images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: 'Proyecto Margaret Hamilton' }],
+  },
 }
 
 export default function DonacionPage() {

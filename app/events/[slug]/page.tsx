@@ -25,13 +25,31 @@ export async function generateMetadata({ params }: EventPageProps): Promise<Meta
     return { title: 'Evento no encontrado' }
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
+  const eventUrl = `${siteUrl}/events/${event.slug}`
+  const description = event.excerpt || event.title
+  const ogImage = event.bannerImage
+    ? event.bannerImage.startsWith('http') ? event.bannerImage : `${siteUrl}${event.bannerImage}`
+    : undefined
+
   return {
     title: event.title,
-    description: event.excerpt || event.title,
+    description,
+    alternates: { canonical: eventUrl },
     openGraph: {
       title: event.title,
-      description: event.excerpt || event.title,
-      images: event.bannerImage ? [event.bannerImage] : [],
+      description,
+      url: eventUrl,
+      type: 'article',
+      locale: 'es_ES',
+      siteName: 'Proyecto Margaret Hamilton',
+      images: ogImage ? [{ url: ogImage, width: 1200, height: 630, alt: event.title }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: event.title,
+      description,
+      images: ogImage ? [{ url: ogImage, alt: event.title }] : [],
     },
   }
 }

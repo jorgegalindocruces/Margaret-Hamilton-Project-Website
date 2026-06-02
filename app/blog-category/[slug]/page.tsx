@@ -18,12 +18,27 @@ export async function generateStaticParams() {
 export const dynamicParams = false
 
 export async function generateMetadata({ params }: BlogCategoryPageProps): Promise<Metadata> {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
   const categories = getAllBlogCategories()
   const category = categories.find((cat) => cat.slug === params.slug)
+  const title = category ? `${category.title} - Blog` : 'Categoría'
+  const description = category
+    ? `Artículos de ${category.title} en el blog del Proyecto Margaret Hamilton, escuela de programación en Cádiz.`
+    : 'Categoría del blog del Proyecto Margaret Hamilton.'
+  const url = `${siteUrl}/blog-category/${params.slug}`
 
   return {
-    title: category ? `${category.title} - Blog` : 'Categoría',
-    description: `Posts de la categoría ${category?.title || ''}`,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: 'website',
+      locale: 'es_ES',
+      siteName: 'Proyecto Margaret Hamilton',
+    },
   }
 }
 

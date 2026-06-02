@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       'Escuela de programación en Cádiz. Cursos de Scratch y coding para niños de 6 a 12 años en colegios públicos. Talleres educativos sin ánimo de lucro.',
     images: [
       {
-        url: '/images/logo/og-image.jpg',
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'}/images/logo/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'Proyecto Margaret Hamilton - Escuela de Programación para Niños y Niñas',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     description:
       'Escuela de programación en Cádiz. Aprende Scratch y coding en colegios públicos.',
     creator: '@proyectomargarethamilton',
-    images: ['/images/logo/og-image.jpg'],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'}/images/logo/og-image.jpg`],
   },
   robots: {
     index: true,
@@ -92,9 +92,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'google-site-verification-code', // TODO: Reemplazar con el código real
-  },
+  // verification: {
+  //   google: 'TU_CODIGO_DE_VERIFICACION', // Descomentar cuando tengas el código de Google Search Console
+  // },
 }
 
 export default function RootLayout({
