@@ -89,9 +89,9 @@ export default function CreaTuEscuelaPage() {
               </p>
 
               <div className="bg-primary-50 rounded-xl p-8 mt-8">
-                <h3 className="mb-4 text-2xl font-bold text-gray-900">
-                  🧩 ¿Qué encontrarás aquí?
-                </h3>
+                <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                  ¿Qué encontrarás aquí?
+                </h2>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="mr-3 text-primary-600">✓</span>

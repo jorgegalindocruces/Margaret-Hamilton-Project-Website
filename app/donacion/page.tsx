@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Donaciones - Apoya la Escuela de Programación en Cádiz',
+  title: 'Donaciones - Apoya la Programación en Cádiz',
   description: 'Apoya al Proyecto Margaret Hamilton con donaciones deducibles. Lleva programación a más colegios públicos de Cádiz. Invierte en el futuro.',
   keywords: [
     'donaciones programación niños',

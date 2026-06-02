@@ -10,7 +10,7 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Equipo de Voluntarios - Escuela de Programación en Cádiz',
+  title: 'Equipo de Voluntarios - Programación en Cádiz',
   description: 'Conoce al equipo de educadores voluntarios que enseña programación y Scratch a niños en colegios públicos de Cádiz. Únete como voluntario.',
   keywords: [
     'voluntariado programación Cádiz',
@@ -55,6 +55,9 @@ export default function EquipoPage() {
       {teamMembers && teamMembers.length > 0 && (
         <Section>
           <Container>
+            <h2 className="mb-10 text-3xl font-bold text-center text-gray-900 font-heading">
+              Conoce al equipo
+            </h2>
             <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
               {teamMembers.map((member) => (
                 <div key={member.slug} className="text-center">

@@ -38,6 +38,13 @@ export async function generateMetadata({ params }: BlogCategoryPageProps): Promi
       type: 'website',
       locale: 'es_ES',
       siteName: 'Proyecto Margaret Hamilton',
+      images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [{ url: `${siteUrl}/images/logo/og-image.jpg`, alt: title }],
     },
   }
 }
@@ -72,6 +79,7 @@ export default function BlogCategoryPage({ params }: BlogCategoryPageProps) {
 
       <Section>
         <Container>
+          <h2 className="sr-only">Artículos en {category.title}</h2>
           {posts && posts.length > 0 ? (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (

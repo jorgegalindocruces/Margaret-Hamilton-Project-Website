@@ -130,6 +130,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Author info */}
         <Section variant="gray">
           <Container size="md">
+            <h2 className="sr-only">Sobre el autor</h2>
             <div className="rounded-xl border border-gray-200 bg-white p-8">
               <div>
                 <h3 className="mb-2 text-xl font-semibold text-gray-900">

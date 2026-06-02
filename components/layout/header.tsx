@@ -14,6 +14,7 @@ const navigation = [
     href: '#',
     submenu: [
       { name: 'Nuestra misión', href: '/nuestra-mision' },
+      { name: 'Robótica educativa', href: '/robotica' },
       { name: 'Nuestro equipo', href: '/equipo' },
       { name: 'Blog', href: '/blog' },
     ],
