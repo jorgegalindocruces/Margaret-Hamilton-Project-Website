@@ -4,6 +4,7 @@ import { Section } from '@/components/ui/section'
 import { MDXContent } from '@/components/mdx/mdx-content'
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/content'
 import { formatDate } from '@/lib/utils'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -101,6 +102,23 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </Container>
         </Section>
+
+        {/* Cover Image */}
+        {post.coverImage && (
+          <Section className="pt-0 pb-0">
+            <Container size="md">
+              <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </Container>
+          </Section>
+        )}
 
         {/* Content */}
         <Section>
