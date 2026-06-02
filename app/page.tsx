@@ -47,6 +47,18 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Banner preinscripción */}
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdzlmKd9kA2kwWNK673SpK-V9XExtsI9KFAZ5Gx7BKw30hCpg/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-primary-600 px-4 py-3 text-center text-white hover:bg-primary-700 transition-colors"
+      >
+        <span className="text-sm font-medium sm:text-base">
+          Preinscripción abierta para el curso 2026-2027 &rarr;
+        </span>
+      </a>
+
       {/* Hero Section */}
       <Hero
         title="Desarrollamos el talento del futuro, inspirando a las niñas y niños de hoy"
