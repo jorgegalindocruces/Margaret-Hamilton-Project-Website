@@ -227,7 +227,7 @@ export default function ProgramacionPage() {
             <p className="mb-8 text-lg text-gray-600">
               Ponte en contacto con nosotros o accede directamente a nuestro currículum abierto para montar tu propia escuela de programación.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
               <Link
                 href="/contacta"
                 className="rounded-lg bg-primary-600 px-8 py-3 text-center font-medium text-white hover:bg-primary-700 transition-colors"
@@ -239,6 +239,12 @@ export default function ProgramacionPage() {
                 className="rounded-lg border border-gray-300 px-8 py-3 text-center font-medium text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 Monta tu escuela
+              </Link>
+              <Link
+                href="/robotica"
+                className="rounded-lg border border-gray-300 px-8 py-3 text-center font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                Ver robótica educativa
               </Link>
             </div>
           </div>
