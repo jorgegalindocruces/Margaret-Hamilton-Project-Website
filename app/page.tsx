@@ -15,8 +15,8 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Escuela de Programación para Niños y Niñas en Cádiz',
-  description: 'Escuela de programación en Cádiz para niños de 6 a 12 años en colegios públicos. Aprende Scratch, robótica y coding con talleres sin ánimo de lucro.',
+  title: 'Programación y Robótica para Niñas y Niños en Cádiz',
+  description: 'Escuela sin ánimo de lucro en Cádiz con clases de programación, Scratch y robótica para niñas y niños de 6 a 12 años en colegios públicos.',
   alternates: {
     canonical: siteUrl,
   },
@@ -63,7 +63,7 @@ export default function HomePage() {
       <Hero
         title="Desarrollamos el talento del futuro, inspirando a las niñas y niños de hoy"
         subtitle="Proyecto Margaret Hamilton"
-        description="Cerramos la brecha de género en tecnología desde la infancia con escuelas de programación subvencionadas en colegios públicos"
+        description="Llevamos programación y robótica a niñas y niños de 6 a 12 años en colegios públicos de Cádiz, desde una escuela sin ánimo de lucro y paritaria"
         ctaPrimary={{ text: 'Descubre cómo', href: '/nuestra-mision' }}
         ctaSecondary={{ text: 'Monta tu escuela', href: '/crea-tu-escuela' }}
         videoBackground="1011818557"
