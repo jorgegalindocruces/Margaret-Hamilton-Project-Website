@@ -9,8 +9,8 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Robótica Educativa - LEGO Essential en Cádiz',
-  description: 'Clases de robótica educativa con LEGO Essential en colegios públicos de Cádiz. Programación visual, retos STEAM y pensamiento computacional para niños.',
+  title: 'Robótica Educativa para Niñas y Niños en Cádiz',
+  description: 'Robótica educativa en colegios públicos de Cádiz con LEGO Education Essential. Programación visual, retos STEAM y pensamiento computacional de 6 a 12 años.',
   keywords: [
     'robótica educativa Cádiz',
     'LEGO Essential escuelas',
