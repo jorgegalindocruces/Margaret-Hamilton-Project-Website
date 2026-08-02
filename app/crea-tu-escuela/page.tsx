@@ -9,8 +9,8 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Cursos de Scratch y Programación para Niños',
-  description: '45 cursos de Scratch y programación para niños de 6 a 12 años. Vídeos, talleres y material descargable para montar tu escuela de programación.',
+  title: 'Crea tu Escuela de Programación con Scratch',
+  description: 'Currículum abierto de Scratch para crear una escuela de programación para niñas y niños de 6 a 12 años en colegios públicos.',
   keywords: [
     'cursos scratch niños',
     'tutoriales programación infantil',
@@ -58,10 +58,10 @@ export default function CreaTuEscuelaPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold text-gray-900 font-heading sm:text-5xl">
-              Te enseñamos todo lo necesario para Montar tu propia escuela
+              Crea una escuela de programación con Scratch, paso a paso
             </h1>
             <p className="mb-8 text-lg text-gray-600">
-              Currículum completo, videos explicativos y materiales descargables
+              Currículum abierto, vídeos explicativos y materiales para llevarlo a un colegio público
             </p>
           </div>
         </Container>
