@@ -8,8 +8,8 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Programación Educativa - Scratch en Cádiz',
-  description: 'Clases de programación con Scratch para niños de 6 a 12 años en colegios públicos de Cádiz. Pensamiento computacional, lógica y creatividad.',
+  title: 'Programación para Niñas y Niños en Cádiz - Scratch',
+  description: 'Clases extraescolares de programación con Scratch para niñas y niños de 6 a 12 años en colegios públicos de Cádiz. Proyecto sin ánimo de lucro.',
   keywords: [
     'programación para niños Cádiz',
     'clases Scratch Cádiz',
