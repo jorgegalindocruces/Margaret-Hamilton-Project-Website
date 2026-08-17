@@ -12,7 +12,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamilto
 
 export const metadata: Metadata = {
   title: 'Nuestra Misión - Igualdad de Género en Tecnología',
-  description: 'Escuela de programación en Cádiz sin ánimo de lucro. Cerramos la brecha de género en tecnología con paridad 50/50 en colegios públicos.',
+  description: 'Escuela sin ánimo de lucro en Cádiz: programación y tecnología para niñas y niños de 6 a 12 años en colegios públicos, con paridad 50/50.',
   keywords: [
     'igualdad de género tecnología',
     'educación inclusiva Cádiz',
@@ -51,7 +51,7 @@ export default function MisionPage() {
     <>
       <Hero
         title="Nuestra misión: Desarrollamos el talento del futuro, inspirando a las niñas y niños de hoy"
-        description="¿Te sumas al cambio?"
+        description="Escuela sin ánimo de lucro en colegios públicos de Cádiz, con paridad 50/50 y acceso subvencionado"
         backgroundImage={getAssetPath('/images/misc/img-3.jpeg')}
       />
 
