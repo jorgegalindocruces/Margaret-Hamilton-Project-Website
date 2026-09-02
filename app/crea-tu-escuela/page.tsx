@@ -10,7 +10,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamilto
 
 export const metadata: Metadata = {
   title: 'Crea tu Escuela de Programación con Scratch',
-  description: 'Currículum abierto de Scratch para crear una escuela de programación para niñas y niños de 6 a 12 años en colegios públicos.',
+  description: 'Guía abierta para docentes y AMPAs: currículum de Scratch, vídeos y materiales para crear una escuela de programación en un colegio público.',
   keywords: [
     'cursos scratch niños',
     'tutoriales programación infantil',
@@ -61,7 +61,7 @@ export default function CreaTuEscuelaPage() {
               Crea una escuela de programación con Scratch, paso a paso
             </h1>
             <p className="mb-8 text-lg text-gray-600">
-              Currículum abierto, vídeos explicativos y materiales para llevarlo a un colegio público
+              Una guía abierta para docentes, AMPAs y colegios: sesiones de Scratch, vídeos y materiales listos para empezar con criterio
             </p>
           </div>
         </Container>
@@ -72,7 +72,7 @@ export default function CreaTuEscuelaPage() {
         <Container>
           <div className="mx-auto max-w-4xl">
             <h2 className="mb-6 text-3xl font-bold text-gray-900 font-heading">
-              Tecnología, comunidad y futuro en tus manos
+              Todo lo necesario para replicar el proyecto en tu colegio
             </h2>
 
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">

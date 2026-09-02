@@ -15,8 +15,8 @@ import type { Metadata } from 'next'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.margarethamiltonproject.org'
 
 export const metadata: Metadata = {
-  title: 'Programación y Robótica para Niñas y Niños en Cádiz',
-  description: 'Escuela sin ánimo de lucro en Cádiz con clases de programación, Scratch y robótica para niñas y niños de 6 a 12 años en colegios públicos.',
+  title: 'Escuela de Programación para Niñas y Niños en Cádiz',
+  description: 'Programación, Scratch y robótica para niñas y niños de 6 a 12 años en colegios públicos de Cádiz. Proyecto sin ánimo de lucro, con preinscripción abierta.',
   alternates: {
     canonical: siteUrl,
   },
@@ -64,7 +64,7 @@ export default function HomePage() {
         title="Desarrollamos el talento del futuro, inspirando a las niñas y niños de hoy"
         subtitle="Proyecto Margaret Hamilton"
         description="Llevamos programación y robótica a niñas y niños de 6 a 12 años en colegios públicos de Cádiz, desde una escuela sin ánimo de lucro y paritaria"
-        ctaPrimary={{ text: 'Descubre cómo', href: '/nuestra-mision' }}
+        ctaPrimary={{ text: 'Ver clases en Cádiz', href: '/programacion' }}
         ctaSecondary={{ text: 'Monta tu escuela', href: '/crea-tu-escuela' }}
         videoBackground="1011818557"
       />
@@ -116,7 +116,7 @@ export default function HomePage() {
               Somos una iniciativa educativa que busca cerrar la brecha de género en
               tecnología desde la infancia. Llevamos la programación a
               colegios públicos, creando espacios inclusivos donde niñas y niños descubren
-              su potencial tecnológico.
+              su potencial tecnológico. También trabajamos <Link href="/robotica" className="font-medium text-primary-600 hover:text-primary-700">robótica educativa en el aula</Link> con materiales manipulativos.
             </p>
           </div>
         </Container>
