@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const ogImageSrc = post.ogImage || post.coverImage
   const ogImageUrl = ogImageSrc
     ? ogImageSrc.startsWith('http') ? ogImageSrc : `${siteUrl}${ogImageSrc}`
-    : undefined
+    : `${siteUrl}/images/logo/og-image.jpg`
   const description = post.excerpt || post.title
 
   return {
@@ -52,15 +52,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       authors: [post.author],
       section: post.category,
       tags: post.tags,
-      images: ogImageUrl
-        ? [{ url: ogImageUrl, width: 1200, height: 630, alt: post.title }]
-        : [],
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description,
-      images: ogImageUrl ? [{ url: ogImageUrl, alt: post.title }] : [],
+      images: [{ url: ogImageUrl, alt: post.title }],
     },
   }
 }
