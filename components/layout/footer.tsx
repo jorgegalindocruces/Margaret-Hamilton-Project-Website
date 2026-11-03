@@ -37,7 +37,7 @@ const footerLinks = {
     { name: 'Equipo', href: '/equipo' },
     { name: 'Blog', href: '/blog' },
     { name: 'Cursos', href: '/crea-tu-escuela' },
-    { name: 'Contacto', href: '/contacta' },
+    { name: 'Contacto', href: 'mailto:proyectomargarethamilton@gmail.com' },
   ],
 }
 
@@ -109,8 +109,11 @@ export function Footer() {
             <div className="flex flex-col gap-4 text-sm sm:flex-row sm:justify-between">
               <div>
                 <p className="font-medium text-white">Contacto</p>
-                <p className="mt-1">proyectomargarethamilton@gmail.com</p>
-                <p>Tel: 690 051 056</p>
+                <p className="mt-1">
+                  <a href="mailto:proyectomargarethamilton@gmail.com" className="hover:text-white">
+                    proyectomargarethamilton@gmail.com
+                  </a>
+                </p>
                 <p className="mt-2">Calle Fernández Ballesteros 2, Cádiz</p>
               </div>
               <div className="text-gray-400">

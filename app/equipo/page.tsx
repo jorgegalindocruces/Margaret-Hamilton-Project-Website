@@ -127,10 +127,10 @@ export default function EquipoPage() {
             </h2>
             <div className="space-y-2 text-gray-700">
               <p>
-                <strong>Email:</strong> proyectomargarethamilton@gmail.com
-              </p>
-              <p>
-                <strong>Teléfono:</strong> 690 051 056
+                <strong>Email:</strong>{' '}
+                <a href="mailto:proyectomargarethamilton@gmail.com" className="text-primary-600 hover:underline">
+                  proyectomargarethamilton@gmail.com
+                </a>
               </p>
               <p>
                 <strong>Dirección:</strong> Calle Fernández Ballesteros 2, Cádiz

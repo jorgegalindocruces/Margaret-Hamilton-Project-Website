@@ -17,11 +17,11 @@ const navigation = [
       { name: 'Programación educativa', href: '/programacion' },
       { name: 'Robótica educativa', href: '/robotica' },
       { name: 'Nuestro equipo', href: '/equipo' },
-      { name: 'Blog', href: '/blog' },
     ],
   },
   { name: 'Monta tu escuela', href: '/crea-tu-escuela' },
-  { name: 'Contactanos', href: '/contacta' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contactanos', href: 'mailto:proyectomargarethamilton@gmail.com' },
   { name: 'Participa', href: '/donacion' },
 ]
 

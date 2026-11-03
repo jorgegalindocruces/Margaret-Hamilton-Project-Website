@@ -97,7 +97,7 @@ export default function MisionPage() {
             <h2 className="mb-12 text-3xl font-bold text-gray-900 font-heading sm:text-4xl text-center">
               Escuelas Activas
             </h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className={`grid grid-cols-1 gap-8 ${schools.length > 1 ? 'sm:grid-cols-2' : 'mx-auto max-w-xl'}`}>
               {schools.map((school) => (
                 <div
                   key={school.slug}
