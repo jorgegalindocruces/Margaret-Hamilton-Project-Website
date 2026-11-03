@@ -1,4 +1,3 @@
-import { ContactForm } from '@/components/forms/contact-form'
 import { Hero } from '@/components/sections/hero'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
@@ -66,12 +65,6 @@ export default function ContactaPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="mb-2 font-semibold text-gray-900">Teléfono</h3>
-                  <a href="tel:+34690051056" className="text-primary-600 hover:underline">
-                    690 051 056
-                  </a>
-                </div>
-                <div>
                   <h3 className="mb-2 font-semibold text-gray-900">Dirección</h3>
                   <p className="text-gray-700">
                     Calle Fernández Ballesteros 2<br />
@@ -114,20 +107,29 @@ export default function ContactaPage() {
                   ¿A quién va dirigido?
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Este formulario es para madres, padres, profesores, colegios y
-                  asociaciones interesadas en lanzar una escuela, colaborar con el proyecto
-                  o simplemente conocer más sobre nuestra iniciativa.
+                  Escríbenos si eres madre, padre, profesor o profesora, o formas parte de
+                  un colegio o una asociación y quieres lanzar una escuela, colaborar con el
+                  proyecto o simplemente conocer más sobre nuestra iniciativa.
                 </p>
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Email CTA */}
             <div>
               <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
-                <h2 className="mb-6 text-2xl font-bold text-gray-900 font-heading">
-                  Envíanos un mensaje
+                <h2 className="mb-4 text-2xl font-bold text-gray-900 font-heading">
+                  Envíanos un email
                 </h2>
-                <ContactForm />
+                <p className="mb-6 text-gray-700 leading-relaxed">
+                  Cuéntanos quién eres y en qué podemos ayudarte. Leemos todos los mensajes y
+                  te responderemos lo antes posible.
+                </p>
+                <a
+                  href="mailto:proyectomargarethamilton@gmail.com"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700"
+                >
+                  Escribir a proyectomargarethamilton@gmail.com
+                </a>
               </div>
             </div>
           </div>

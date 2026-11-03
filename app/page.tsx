@@ -131,10 +131,10 @@ export default function HomePage() {
                 Nuestras escuelas activas
               </h2>
               <p className="text-lg text-gray-600">
-                {schools.length} colegios públicos con programas activos
+                {schools.length === 1 ? 'Un colegio público con programa activo, abierto a alumnado de cualquier centro' : `${schools.length} colegios públicos con programas activos`}
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className={`grid grid-cols-1 gap-8 ${schools.length > 1 ? 'md:grid-cols-2' : 'mx-auto max-w-xl'}`}>
               {schools.map((school) => (
                 <div
                   key={school.slug}

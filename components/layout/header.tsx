@@ -21,7 +21,7 @@ const navigation = [
     ],
   },
   { name: 'Monta tu escuela', href: '/crea-tu-escuela' },
-  { name: 'Contactanos', href: '/contacta' },
+  { name: 'Contactanos', href: 'mailto:proyectomargarethamilton@gmail.com' },
   { name: 'Participa', href: '/donacion' },
 ]
 

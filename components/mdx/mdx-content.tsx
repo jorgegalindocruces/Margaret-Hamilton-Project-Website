@@ -2,9 +2,11 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import Link from 'next/link'
+import { StudentGrowthChart } from './student-growth-chart'
 
 // Custom components for MDX
 const components: MDXComponents = {
+  StudentGrowthChart,
   h1: (props) => (
     <h1 className="mb-6 text-4xl font-bold text-gray-900 font-heading" {...props} />
   ),
