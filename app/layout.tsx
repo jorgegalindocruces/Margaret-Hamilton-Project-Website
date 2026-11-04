@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s | Proyecto Margaret Hamilton',
   },
   description:
-    'Escuela de programación en Cádiz para niños y niñas de 6 a 12 años. Aprende Scratch y programación en colegios públicos. Talleres, cursos y eventos educativos sin ánimo de lucro. ¡Cerramos la brecha de género en tecnología!',
+    'Escuela de programación en Cádiz para niños y niñas de 6 a 12 años. Aprende Scratch y robótica en colegios públicos, sin ánimo de lucro. ¡Apúntate!',
   keywords: [
     'programación para niños Cádiz',
     'clases de programación infantil',
